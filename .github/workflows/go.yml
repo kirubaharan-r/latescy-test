@@ -31,6 +31,6 @@ jobs:
       uses: docker/build-push-action@v4
       with:
         push: true
-        tags: kiru1eks/latescy-test:$(date +%s)
+        tags: kiru1eks/latescy-test:latest
         secrets: |
             GIT_AUTH_TOKEN=${{ secrets.MYTOKEN }}
