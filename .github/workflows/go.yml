@@ -15,7 +15,7 @@ jobs:
 
     steps:
     -
-      name: Set up QEMU
+      name: setup
       uses: docker/setup-qemu-action@v2
     -
       name: Set up Docker Buildx
