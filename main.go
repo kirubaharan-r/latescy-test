@@ -19,12 +19,14 @@ func main() {
 func test(c *gin.Context) {
 	a := time.Now()
 	url := c.PostForm("url")
-	response, err := http.Get(url)
+	htt := "https://" + url
+	response, err := http.Get(htt)
 
 	if err != nil {
 
 		c.String(http.StatusOK, "site was down")
 	}
+
 	time.Sleep(time.Duration(100) * time.Millisecond)
 	defer response.Body.Close()
 	c.JSON(http.StatusOK, gin.H{
@@ -33,4 +35,5 @@ func test(c *gin.Context) {
 		"URL":             fmt.Sprintln(response.StatusCode, response.Request.URL),
 		"time":            fmt.Sprintln(time.Since(a)),
 	})
+
 }
