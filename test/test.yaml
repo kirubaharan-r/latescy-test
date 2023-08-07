@@ -24,7 +24,7 @@ spec:
 kind: Service
 apiVersion: v1
 metadata:
-  name: myapp-Name
+  name: myapp-svc
 spec:
   selector:
     app:  myapp
@@ -60,7 +60,7 @@ spec:
 kind: Service
 apiVersion: v1
 metadata:
-  name: myapp-Name-2
+  name: myapp-svc-2
 spec:
   selector:
     app:  myapp-2
