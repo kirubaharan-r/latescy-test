@@ -28,7 +28,7 @@ metadata:
 spec:
   selector:
     app:  myapp
-  type:  LoadBalancer 
+  type:  ClusterIp 
   ports:
   - name:  name-of-the-port
     port:  80
@@ -64,7 +64,7 @@ metadata:
 spec:
   selector:
     app:  myapp-2
-  type:  LoadBalancer 
+  type:  ClusterIp 
   ports:
   - name:  name-of-the-port
     port:  80
