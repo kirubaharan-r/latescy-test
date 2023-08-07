@@ -20,3 +20,52 @@ spec:
             cpu: "500m"
         ports:
         - containerPort: 8084
+---
+kind: Service
+apiVersion: v1
+metadata:
+  name: myapp-Name
+spec:
+  selector:
+    app:  myapp
+  type:  LoadBalancer 
+  ports:
+  - name:  name-of-the-port
+    port:  80
+    targetPort:  8084
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: myapp-2
+spec:
+  selector:
+    matchLabels:
+      app: myapp-2
+  template:
+    metadata:
+      labels:
+        app: myapp-2
+    spec:
+      containers:
+      - name: myapp-2
+        image: kiru1eks/latescy-test:latest
+        resources:
+          limits:
+            memory: "128Mi"
+            cpu: "500m"
+        ports:
+        - containerPort: 8084
+---
+kind: Service
+apiVersion: v1
+metadata:
+  name: myapp-Name-2
+spec:
+  selector:
+    app:  myapp-2
+  type:  LoadBalancer 
+  ports:
+  - name:  name-of-the-port
+    port:  80
+    targetPort:  8084
