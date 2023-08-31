@@ -39,6 +39,8 @@ spec:
 apiVersion: apps/v1
 kind: Deployment
 metadata:
+  labels:
+    app2: mya3
   name: myapp-2
 spec:
   selector:
