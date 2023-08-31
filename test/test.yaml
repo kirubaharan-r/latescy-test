@@ -3,6 +3,7 @@ kind: Deployment
 metadata:
   labels:
     app: myapp
+    app2: mya3
   name: myapp
 spec:
   selector:
@@ -40,6 +41,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   labels:
+    app: myapp
     app2: mya3
   name: myapp-2
 spec:
