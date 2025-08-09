@@ -1,0 +1,10 @@
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: latescy-test
+  annotations:
+    github.com/project-slug: kirubaharan-r/latescy-test
+spec:
+  type: other
+  lifecycle: unknown
+  owner: guests
